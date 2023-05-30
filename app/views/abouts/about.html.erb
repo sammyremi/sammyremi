@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag 'abouts/about' %>
+
+<body>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="<%= asset_path('user.png') %>">
+                </div> 
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am a passionate backend developer with expertise in Ruby on Rails. 
+                        With several years of experience in building robust and scalable web applications, 
+                        I specialize in designing and implementing efficient server-side solutions. 
+                        My skills include developing RESTful APIs, database management, optimizing application performance, 
+                        and ensuring data security. I have a strong understanding of MVC architecture, object-oriented programming, 
+                        and best coding practices. I enjoy collaborating with cross-functional teams 
+                        and contributing to the entire development lifecycle, from requirement analysis to deployment. 
+                        I strive to continuously learn and stay up-to-date with the latest technologies and industry trends to deliver high-quality software solutions. 
+                        If you are looking for a dedicated and skilled backend developer for your next project, feel free to get in touch!
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Andriod/ios apps</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>UI</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Developmen for expeeriencessssst</li>
+                            <li><span>App Development</span><br>Building Andriod/ios apps</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>UI</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Developmentsssss</li>
+                            <li><span>App Development</span><br>Building Andriod/ios apps</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
