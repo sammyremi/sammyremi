@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root "homes#index"
 
   get "about", to: "abouts#about"
+  get "service", to: "services#service"
 end
