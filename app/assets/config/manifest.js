@@ -5,3 +5,5 @@
 //= link homes/index.css
 //= link abouts/about.css
 //= link services/service.css
+//= link portfolios/portfolio.css
+//= link contacts/contact.css

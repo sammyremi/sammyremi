@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   get "about", to: "abouts#about"
   get "service", to: "services#service"
+  get "portfolio", to: "portfolios#portfolio"
+  get "contact", to: "contacts#contact"
+
 end
