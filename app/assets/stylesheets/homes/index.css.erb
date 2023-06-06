@@ -14,7 +14,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url('<%= asset_path('background.png') %>');
+    background-image: url('<%= asset_path('user2.png') %>');
     background-size: cover;
     background-position: center;
 }
@@ -28,10 +28,12 @@ nav{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: #000000;
 }
 
 .logo {
-  width: 140px;
+  width: 150px;
+  padding-left: 20px;
 }
 
 nav ul li {
@@ -51,7 +53,7 @@ nav ul li a::after {
   content: '';
   width: 0%;
   height: 3px;
-  background: #ff004f;
+  background: #ef27ff;
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -69,37 +71,38 @@ nav ul li a:hover::after {
 
 .header-text h1 {
   font-size: 60px;
-  margin-top: 20px;
+  margin-top: 150px;
 }
 
 .header-text h1 span {
-    color: #ff004f;
+    color: #ef27ff;
 }
 
 nav .fa-solid {
   display: none;
 }
 
-@media only screen and (max-width: 600px){
-  #header{
-    background-image: url('<%= asset_path('phone-background.png') %>');
+@media only screen and (max-width: 600px) {
+  #header {
+    background-image: url('<%= asset_path('phone-background2.png') %>');
   }
-  .header-text{
-    margin-top: 100%;
+
+  .header-text {
+    margin-top: 700%;
     font-size: 16px;
   }
 
-  .header-text h1{
+  .header-text h1 {
     font-size: 30px;
   }
 
-  nav .fa-solid{
+  nav .fa-solid {
     display: block;
-    font-size 25px;
+    font-size: 25px;
   }
 
-  nav ul{
-    background: #ff004f;
+  nav ul {
+    background: #ef27ff;
     position: fixed;
     top: 0;
     right: -200px;
@@ -110,16 +113,15 @@ nav .fa-solid {
     transition: right 0.5s;
   }
 
-  nav ul li{
+  nav ul li {
     display: block;
     margin: 25px;
   }
 
-  nav ul .fa-solid{
+  nav ul .fa-solid {
     position: absolute;
     top: 25px;
     left: 25px;
     cursor: pointer;
-
   }
 }
