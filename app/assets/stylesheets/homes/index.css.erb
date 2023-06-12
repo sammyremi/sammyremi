@@ -32,7 +32,7 @@ nav{
 }
 
 .logo {
-  width: 150px;
+  width: 157px;
   padding-left: 20px;
 }
 
@@ -45,20 +45,23 @@ nav ul li {
 nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
+    
     position: relative;
 }
 
 nav ul li a::after {
   content: '';
   width: 0%;
-  height: 3px;
-  background: #ef27ff;
+  height: 6px;
+  background: #5034d4;
   position: absolute;
   left: 0;
   bottom: -6px;
   transition: 0.5s;
 }
+
+
 
 nav ul li a:hover::after {
   width: 100%;
@@ -75,12 +78,24 @@ nav ul li a:hover::after {
 }
 
 .header-text h1 span {
-    color: #ef27ff;
+    color: #5034d4;
 }
 
 nav .fa-solid {
   display: none;
 }
+
+.icon{
+  transition: background 0.5s, transform 0.5s;
+}
+
+
+.icon :hover{
+    background: #000000;
+    color: #00c0f9 ;
+    transform: translateY(-10px);
+}
+
 
 @media only screen and (max-width: 600px) {
   #header {
@@ -102,7 +117,7 @@ nav .fa-solid {
   }
 
   nav ul {
-    background: #ef27ff;
+    background: #5034d4;
     position: fixed;
     top: 0;
     right: -200px;

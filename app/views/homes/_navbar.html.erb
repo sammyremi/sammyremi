@@ -1,13 +1,15 @@
-<nav>
-<img src="<%= asset_path('portlogo1.png') %>" class="logo">
-<ul id="sidemenu">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/service">Service</a></li>
-    <li><a href="/portfolio">Portfolio</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+<div>
+  <nav style="padding-top: 20px;">
+    <img src="<%= asset_path('portlogo2.png') %>" class="logo" style="font-size: 24px;">
+    <ul id="sidemenu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/service">Service</a></li>
+      <li><a href="/portfolio">Portfolio</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+    </ul>
+    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+  </nav>
+</div>
 
-</ul>
-<i class="fa-solid fa-bars" onclick="openmenu()"></i>
-</nav>

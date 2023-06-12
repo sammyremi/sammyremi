@@ -2,13 +2,46 @@
 <body>
     <div id="header">
         <div class="container">
-
             <div class="header-text">
-                <p>Backend Developer</p>
-                <h1>Hi, I'm <span>SammyRemi</span><br>From Nigeria</br>As a passionate Rails Developer, I thrive on creating robust and innovative web applications
+                <h1>Hi, I'm <span>Samuel</span></br>
                 </h1>
+                <div class="moving" style="padding-top: 24px; font-size: 20px; color: #00c0f9;">
+                    <p>
+                        <span class="fall-animation" style="animation-delay: 0.5s; font-family: Monaco, monospace;">A backend developer with experience in</span><br>
+                        <span class="fall-animation" style="animation-delay: 1.5s; font-family: Monaco, monospace;">Ruby on Rails, building robust web applications</span><br>
+                        <span class="fall-animation" style="animation-delay: 2.5s; font-family: Monaco, monospace;">with efficient server-side functionality.</span><br>
+                        <span class="fall-animation" style="animation-delay: 3.5s; font-family: Monaco, monospace;">Let's connect and discuss your project!</span>
+                    </p>
+                </div>
+              </div>
+              
+                <div class="icon", style="padding-top: 60px; color: #5034d4">
+                    <i class="fa-solid fa-laptop-code" style="font-size: 140px; padding-right: 20px;"></i>
+                    <i class="fa-solid fa-gear" style="font-size: 140px; padding-right: 20px;"></i>
+                    <i class="fa-solid fa-fingerprint" style="font-size: 140px; padding-right: 20px;"></i>
+                </div>
+                <p style="padding-left: 190px; padding-top: 50px; font-family: Monaco, monospace; ">Backend Developer</p>
             </div>
+        </div>
     </div>
+
+    <style>
+    @keyframes fall {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  
+    .fall-animation {
+      animation: fall 0.5s ease-out forwards;
+      opacity: 0;
+    }
+  </style>
 
 
     <script>
@@ -22,6 +55,5 @@
             sidemenu.style.right = "-200px";
         }
     </script>
-
-
+    
 </body>
