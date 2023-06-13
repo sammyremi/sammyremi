@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'abouts/about' %>
 
-<body>
+<body class="about-body">
     <div id="about">
         <div class="container">
             <div class="row">
@@ -8,38 +8,50 @@
                     <img src="<%= asset_path('usera.jpg') %>">
                 </div> 
                 <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>
-                        I am a passionate backend developer with expertise in Ruby on Rails. 
-                        With several years of experience in building robust and scalable web applications, 
-                        I specialize in designing and implementing efficient server-side solutions. 
-                        My skills include developing RESTful APIs, database management, optimizing application performance, 
-                        and ensuring data security. I have a strong understanding of MVC architecture, object-oriented programming, 
-                        and best coding practices. I enjoy collaborating with cross-functional teams 
-                        and contributing to the entire development lifecycle, from requirement analysis to deployment. 
-                        I strive to continuously learn and stay up-to-date with the latest technologies and industry trends to deliver high-quality software solutions. 
-                        If you are looking for a dedicated and skilled backend developer for your next project, feel free to get in touch!
+                    <h1 class="sub-title" style="text-align: center; color: #00c0f9">About Me</h1>
+                    <p style="font-size: 18px; padding-top: 20px;">
+
+                    I am a passionate and dedicated backend developer specializing in Ruby on Rails. 
+                    With a keen eye for detail and a love for problem-solving, 
+                    I thrive in building reliable and scalable web applications. 
+                    My expertise lies in optimizing performance, implementing RESTful APIs, 
+                    and ensuring robust data security. I have a strong foundation in MVC 
+                    architecture and database management. With a continuous desire to learn and 
+                    stay updated with industry trends, I am committed to delivering cutting-edge solutions.
+
                     </p>
 
                     <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links active-link" style="font-size: 20px; font-weight: bold;" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" style="font-size: 20px; font-weight: bold;" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" style="font-size: 20px; font-weight: bold;" onclick="opentab('education')">Education</p>
                     </div>
 
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>UI</span><br>Designing Web/App interfaces</li>
-                            <li><span>Web Development</span><br>Web app Development</li>
-                            <li><span>App Development</span><br>Building Andriod/ios apps</li>
+                            <li><span>Programing Languages:</span><br>Ruby, Python, Javascript, C</li>
+                            <li><span>Web Development:</span><br>Ruby on Rails, HTML/CSS, Bootstrap, Sinatra</li>
+                            <li><span>Database:</span><br>PostgreSQL, MySQL, Sqlite</li>
+                            <li><span>Tools:</span><br>VS Code, Github, CLI, DBMS, Docker, AWS</li>
+                            <li><span>API Development:</span><br>Building and consuming APIs using </br>frameworks like RESTful APIs or Swagger.</li>
+                            
                         </ul>
                     </div>
 
                     <div class="tab-contents" id="experience">
                         <ul>
-                            <li><span>UI</span><br>Designing Web/App interfaces</li>
-                            <li><span>Web Development</span><br>Web app Developmen for expeeriencessssst</li>
-                            <li><span>App Development</span><br>Building Andriod/ios apps</li>
+                            <li>
+                                <span>2022 - Current: Qwasar Silicon Valley / Student</span><br>* Developed a strong foundation in backend development through a rigorous curriculum focused on real-world projects and hands-on learning.</br></br>
+                                * Gained practical experience in building web applications using modern technologies and frameworks.</br></br>
+                                * Collaborated with a diverse team of fellow students, simulating real-world working environments and fostering teamwork and communication skills.</br></br>
+                                * Demonstrated problem-solving abilities by resolving technical challenges and debugging issues encountered during project development.</br></br>
+                                * Graduated with a comprehensive understanding of backend development principles and practices, ready to contribute to real-world projects.
+                            </li>
+
+                            <li>
+                                <span>2022 - Current </span><br> 
+                                 
+                            </li>
                         </ul>
                     </div>
 
