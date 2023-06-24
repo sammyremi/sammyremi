@@ -1,10 +1,10 @@
 <body>
     <div id="contact">
         <div class="container">
-            <div class="row">
+            <div class="row" style="padding-top: 50px;">
                 <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i> adebayorsamuelasgmail.com</p>
+                    <h1 class="sub-title" style="color: #00c0f9; ">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope-open-text"></i> adebayorsamuelasgmail.com</p>
                     <p><i class="fa-solid fa-square-phone"></i> 08147468979</p>
                     <div class="social-icons">
                         <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -12,14 +12,31 @@
                         <a href=""><i class="fa-brands fa-instagram"></i></a>
                         <a href=""><i class="fa-brands fa-linkedin"></i></a>
                     </div>
-                    <a href="" class="btn btn2">Download CV</a>
+
+                    <div style="padding-top: 80px; padding-left: 60px;">
+                        <%= link_to '', 'Resume.pdf', download: 'Samuel-Adebayo-Resume.pdf', class: 'fa-solid fa-download', style: 'text-decoration: none; font-size: 44px; color: #00c0f9;' %>
+                    </div>
+                    <div style="padding-top: 5px; padding-left: 35px;">
+                        <i class="fa-solid fa-r"></i>
+                        <i class="fa-solid fa-e"></i>
+                        <i class="fa-solid fa-s"></i>
+                        <i class="fa-solid fa-u"></i>
+                        <i class="fa-solid fa-m"></i>
+                        <i class="fa-solid fa-e"></i>
+                    </div>
+                  
+                  
+
                 </div>
                 <div class="contact-right">
                     <form>
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit">Submit</button>
+                        <button type="submit" style="font-size: 25px; color: #00c0f9; background-color: #000000; border: none;">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    
                     </form>
                 </div>
             </div>
@@ -29,4 +46,35 @@
             <p> Copyright <i class="fa-regular fa-copyright"></i> Samuel. All right reserved</p>
         </div>
     </div>
+
+    <style>
+    @keyframes fall {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  
+    .fall-animation {
+      animation: fall 0.5s ease-out forwards;
+      opacity: 0;
+    }
+  </style>
+
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
 </body>
