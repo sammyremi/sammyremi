@@ -29,15 +29,16 @@
 
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form action="/contact" method="post" name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" style="font-size: 25px; color: #00c0f9; background-color: #000000; border: none;">
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     
                     </form>
+                    <span id="msg" style="padding-top: 10px;"></span>
                 </div>
             </div>
 
@@ -77,4 +78,24 @@
             sidemenu.style.right = "-200px";
         }
     </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby5ZfjoAY1vdLH2MSbSbdQ2U97oU55w4XroDHYqno8rymivjf8TmDdS_8MRYvq-f9BMYw/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message Sent Successfuly"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 1000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+</script>
 </body>
