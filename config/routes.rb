@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get "service", to: "services#service"
   get "portfolio", to: "portfolios#portfolio"
   get "contact", to: "contacts#contact"
+  get '/Resume.pdf', to: "contacts#resume"
+
 
 end
