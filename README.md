@@ -1,12 +1,12 @@
-<img src="https://github.com/sammyremi/sammyremi/blob/main/gitbg.png" alt="Sophap Github README header image">
-<h1 align="center">Welcome to my page </h1>
-
-<h3 align="center">i'm a passionate Backend developer </h3>
+<h1 align="center">Hi 👋, I'm Sammyremi</h1>
+<h3 align="center">✨ Full-stack Software Engineer | Ruby on Rails
+✨
+</h3>
 
 - 🌱 I’m currently learning Web and API development using Ruby & Rails...
 - 👯 I’m looking to collaborate on any web and API development project...
 - 💬 Ask me about **Ruby, Rails**
-- ⚡ Fun fact **I love to fix bugs, sing and read...**
+- ⚡ Fun fact **I love to testing Gadgets...**
 - 🌐 Visit my [porfolio page](https://officialsammyremi.fly.dev/) for more information.
 
 <h3>Languages and Tools</h3>
