@@ -28,4 +28,4 @@
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api?username=sammyremi&show_icons=true&locale=en" alt="sammyremi" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=sophap&" alt="sammyremi" /></p>
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=s&" alt="sammyremi" /></p>
