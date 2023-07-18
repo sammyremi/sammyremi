@@ -1,4 +1,4 @@
-<img src="https://github.com/sammyremi/sammyremi/blob/main/app/assets/images/github-profile-bg.png" alt="Sophap Github README header image">
+<img src="https://github.com/sammyremi/sammyremi/blob/main/app/assets/images/git-bg.png" alt="Sophap Github README header image">
 <h1 align="center">Welcome to my page </h1>
 
 <h3 align="center">i'm a passionate Backend developer </h3>
