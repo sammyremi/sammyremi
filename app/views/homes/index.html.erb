@@ -3,6 +3,15 @@
     <div id="header">
         <div class="container">
             <div class="header-text">
+
+            <div class="gif" style="display: flex; justify-content: center; align-items: center; margin-top: -50px; 
+                @media only screen and (max-width: 600px) { 
+                    display: none;
+                }">
+              <img src="<%= asset_path('World1.gif') %>" alt="GIF Image">
+            </div>
+        
+
                 <h1>Hi, I'm <span>Samuel</span></br>
                 </h1>
                 <div class="moving" style="padding-top: 24px; font-size: 18px; color: #00c0f9;">
@@ -43,6 +52,19 @@
 
 
     <script>
+
+    function updateVisibility() {
+      if (window.innerWidth <= 600) {
+        document.querySelector('.gif').style.display = 'none';
+      } else {
+        document.querySelector('.gif').style.display = 'flex';
+      }
+    }
+  
+    window.addEventListener('load', updateVisibility);
+  
+
+    window.addEventListener('resize', updateVisibility);
         var sidemenu = document.getElementById("sidemenu");
 
         function openmenu(){
