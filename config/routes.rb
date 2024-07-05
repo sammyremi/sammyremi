@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "homes#index"
 
-  get "ourcalendar", to: "home#index"
+  get "c", to: "home#index"
 
   get "about", to: "abouts#about"
   get "service", to: "services#service"
