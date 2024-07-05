@@ -1,0 +1,15 @@
+<% dates = []%>
+<% month_calendar do |date| %>
+  <% date.day %>
+  <% dates.append(date)%>
+<% end %>
+
+<% year = dates[10].to_s%>
+<% split_date = year.split("-") %>
+<% year = split_date[0]%>
+<% month = split_date[1]%>      
+
+<div class="text-6xl pt-8" style="font-family: 'Ms Madi', cursive; align">
+    <%= year %>
+</div>
+
