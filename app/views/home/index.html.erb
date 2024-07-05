@@ -58,11 +58,15 @@
   display: flex;
 }
 
+
+
 span {
   margin: auto;
   font-size: 12px;
   padding-top: 220px;
+   text-align: center;
 }
+
 
 .carousel__face:nth-child(1) {
   background-image: url('<%= asset_path("braid.png") %>');
@@ -103,7 +107,7 @@ span {
 
 .carousel__face .date {
 
-    font-size: 55px;
+    font-size: 60px;
     font-weight: bold;
     padding-top: 0
 }
@@ -122,8 +126,8 @@ span {
 
   <body>
     <main class="flex">
-          <div class="flex" style="margin-top: 70px;">
-      <div style="padding-left: 100px; padding-right: 80px">
+    <div class="flex" style="margin-top: 70px;">
+      <div style="padding-left: 100px; padding-right: 80px ">
         <%= render "home/image" %>
       </div>
 
