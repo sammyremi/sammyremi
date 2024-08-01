@@ -1,0 +1,69 @@
+
+<% year = @today_date%>
+<% split_date = year.split("-") %>
+<% year = split_date[0]%>
+<% month = split_date[1]%>
+
+
+
+<% case month %>
+<% when "01"%>
+    <% month = "January"%>
+<% when "02"%>
+    <% month = "Febuary"%>
+<% when "03"%>
+    <% month = "March"%>
+<% when "04"%>
+    <% month = "April"%>
+<% when "05"%>
+    <% month = "May"%>
+<% when "06"%>
+    <% month = "June"%>
+<% when "07"%>
+    <% month = "July"%>
+<% when "08"%>
+    <% month = "August"%>
+<% when "09"%>
+    <% month = "September"%>
+<% when "10"%>
+    <% month = "October"%>
+<% when "11"%>
+    <% month = "November"%>
+<% when "12"%>
+    <% month = "December"%>
+<% else %>
+<% end %>
+
+<% week = @wday %>
+
+<% case week %>
+<% when "0"%>
+    <% week = "Sunday"%>
+<% when "1"%>
+    <% week = "Monday"%>
+<% when "2"%>
+    <% week = "Tuesday"%>
+<% when "3"%>
+    <% week = "Wednesday"%>
+<% when "4"%>
+    <% week = "Thursday"%>
+<% when "5"%>
+    <% week = "Friday"%>
+<% when "6"%>
+    <% week = "Saturday"%>
+<% else %>
+<% end %>
+
+<div class="container">
+  <div class="carousel">
+    <div class="carousel__face"><span>I love how you came into my life and made it a paradise I love you, my Queen</span></div>
+    <div class="carousel__face"><span>I love the fact you are my Queen</span></div>
+    <div class="carousel__face"><span>I love how I can rely on you, knowing you will always keep to your promises</span></div>
+    <div class="carousel__face"><span>There is nothing I want more than to make you the happiest woman in the world</span></div>
+    <div class="carousel__face"><span>I love how you are excited about my success</span></div>
+    <div class="carousel__face"><span>Each day with you is a wonderful addition to my life's journey. I can't wait to be yours forever</span></div>
+    <div class="carousel__face"><span>I love how we make a great team and tackle life's challenges together</span></div>
+    <div class="carousel__face"><span>A million kisses to the most amazing Queen I know</span></div>
+    <div class="carousel__face"><span class="date" style="font-family: 'Ms Madi', cursive; align"><%= week %> <br> <%= @today %>  <br>  <%= month %> </span></div>
+  </div>
+</div>

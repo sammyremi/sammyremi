@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GalleryCalendar</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Ms+Madi&family=Parisienne&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <style>
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background-image: url('<%= asset_path 'bg.svg' %>');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      
+    }
+
+
+.container {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 2000px;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate360 60s infinite forwards linear;
+}
+.carousel__face {
+  position: absolute;
+  width: 300px;
+  height: 270px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+
+
+span {
+  margin: auto;
+  font-size: 12px;
+  padding-top: 220px;
+   text-align: center;
+}
+
+
+.carousel__face:nth-child(1) {
+  background-image: url('<%= asset_path("braid.png") %>');
+  transform: rotateY(0deg) translateZ(430px);
+}
+.carousel__face:nth-child(2) {
+  background-image: url('<%= asset_path("reds.png") %>');
+  transform: rotateY(40deg) translateZ(430px);
+}
+.carousel__face:nth-child(3) {
+  background-image: url('<%= asset_path("b-w.png") %>');
+  transform: rotateY(80deg) translateZ(430px);
+}
+.carousel__face:nth-child(4) {
+  background-image: url('<%= asset_path("purple.png") %>');
+  transform: rotateY(120deg) translateZ(430px);
+}
+.carousel__face:nth-child(5) {
+  background-image: url('<%= asset_path("lag.png") %>');
+  transform: rotateY(160deg) translateZ(430px);
+}
+.carousel__face:nth-child(6) {
+  background-image: url('<%= asset_path("path.png") %>');
+  transform: rotateY(200deg) translateZ(430px);
+}
+.carousel__face:nth-child(7) {
+  background-image: url('<%= asset_path("hand") %>');
+  transform: rotateY(240deg) translateZ(430px);
+}
+.carousel__face:nth-child(8) {
+  background-image: url('<%= asset_path("kiss.png") %>');
+  transform: rotateY(280deg) translateZ(430px);
+}
+.carousel__face:nth-child(9) {
+  background-image: url('<%= asset_path("") %>');
+  transform: rotateY(320deg) translateZ(430px);
+}
+
+.carousel__face .date {
+
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 0
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+  </style>
+  </head>
+
+  <body>
+    <main class="flex">
+    <div class="flex" style="margin-top: 70px;">
+      <div style="padding-left: 100px; padding-right: 80px ">
+        <%= render "home/image" %>
+      </div>
+
+      <div style="padding-left: 400px; ">
+        <%= render "home/calendar_data" %>
+      </div>
+
+    </div>
+    </main>
+  </body>
+</html>
+
