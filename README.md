@@ -3,7 +3,7 @@
     <img src="https://readme-typing-svg.herokuapp.com/?lines=Hello,+There!+👋;I'm+Samuel+Adebayo....;Nice+to+meet+you!&center=true&size=30">
   </a>
 </h1>
-<h3 align="center">✨ Full-stack Software Engineer | Ruby on Rails
+<h3 align="center">✨ Backend Software Engineer | Ruby on Rails
 ✨
 </h3>
 
