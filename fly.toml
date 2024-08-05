@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for sammyremi on 2024-08-02T00:53:18+01:00
+# fly.toml app configuration file generated for officialsammyremi on 2024-08-02T01:48:46+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'sammyremi'
-primary_region = 'ams'
+app = 'officialsammyremi'
+primary_region = 'lhr'
 console_command = '/rails/bin/rails console'
 
 [build]
