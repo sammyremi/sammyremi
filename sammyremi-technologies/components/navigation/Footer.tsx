@@ -23,11 +23,11 @@ export const Footer: React.FC = () => {
             </a>
             <span className="text-neutral-600">•</span>
             <a
-              href="tel:08147468979"
+              href="tel:+2348147468979"
               className="inline-flex items-center gap-1.5 hover:text-[#D96B18] transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-[#D96B18]" />
-              08147468979
+              +2348147468979
             </a>
           </div>
           <p className="text-xs text-neutral-500 pt-2">

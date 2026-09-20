@@ -126,11 +126,11 @@ export const ContactForm: React.FC = () => {
             officialsammyremi@gmail.com
           </a>
           <a
-            href="tel:08147468979"
+            href="tel:+2348147468979"
             className="inline-flex items-center gap-2 hover:text-[#D96B18] transition-colors"
           >
             <Phone className="w-4 h-4 text-[#D96B18]" />
-            08147468979
+            +2348147468979
           </a>
         </div>
 

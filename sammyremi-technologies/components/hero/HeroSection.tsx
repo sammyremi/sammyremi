@@ -1,11 +1,25 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 export const HeroSection: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Scroll-driven animation transforms matching valeriiagolma style
+  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const titleY = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 45]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+
   const headlineLines = [
     "We build digital products",
     "that move businesses",
@@ -49,13 +63,17 @@ export const HeroSection: React.FC = () => {
 
   return (
     <section
+      ref={containerRef}
       id="hero"
       className="relative min-h-screen bg-[#0B0D13] dark:bg-[#0B0D13] text-white pt-32 pb-16 px-6 sm:px-8 lg:px-12 flex flex-col justify-between overflow-hidden transition-colors"
     >
       {/* Brand Radial ambient glow in background */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#D96B18]/15 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full my-auto py-12 z-10">
+      <motion.div
+        style={shouldReduceMotion ? {} : { scale: titleScale, y: titleY, opacity }}
+        className="max-w-7xl mx-auto w-full my-auto py-12 z-10"
+      >
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -82,6 +100,7 @@ export const HeroSection: React.FC = () => {
 
           {/* Supporting Copy */}
           <motion.p
+            style={shouldReduceMotion ? {} : { y: textY }}
             variants={fadeUpVariants}
             className="text-base sm:text-xl text-neutral-300 max-w-2xl font-normal leading-relaxed text-balance"
           >
@@ -102,7 +121,7 @@ export const HeroSection: React.FC = () => {
             </Button>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Bottom Scroll Indicator & Divider Line */}
       <div className="max-w-7xl mx-auto w-full z-10 pt-8 border-t border-white/10 flex items-center justify-between">

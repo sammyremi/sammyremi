@@ -43,11 +43,11 @@ export const FinalCtaSection: React.FC = () => {
               </a>
 
               <a
-                href="tel:08147468979"
+                href="tel:+2348147468979"
                 className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:border-[#D96B18] dark:hover:border-[#D96B18] transition-colors shadow-xs"
               >
                 <Phone className="w-4 h-4 text-[#D96B18]" />
-                <span>08147468979</span>
+                <span>+2348147468979</span>
               </a>
             </div>
           </ScrollReveal>
