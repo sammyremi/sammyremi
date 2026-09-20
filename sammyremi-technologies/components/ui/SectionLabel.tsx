@@ -10,16 +10,13 @@ interface SectionLabelProps {
 export const SectionLabel: React.FC<SectionLabelProps> = ({
   number,
   text,
-  lightMode = false,
   className = "",
 }) => {
   const content = number ? `${number} / ${text}` : text;
   
   return (
     <div
-      className={`inline-flex items-center gap-2 text-xs uppercase tracking-widest font-mono font-semibold ${
-        lightMode ? "text-[#387BFF]" : "text-[#60A5FA]"
-      } ${className}`}
+      className={`inline-flex items-center gap-2 text-xs uppercase tracking-widest font-mono font-bold text-[#D96B18] ${className}`}
     >
       <span>{content}</span>
     </div>

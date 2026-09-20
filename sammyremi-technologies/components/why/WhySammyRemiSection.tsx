@@ -17,17 +17,17 @@ export const WhySammyRemiSection: React.FC = () => {
   return (
     <section
       id="why"
-      className="bg-white text-[#0B0D13] py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative"
+      className="bg-white dark:bg-[#0B0D13] text-neutral-900 dark:text-white py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative transition-colors"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
         {/* Section Header */}
         <div className="flex flex-col gap-4">
           <ScrollReveal direction="up" delay={0.1}>
-            <SectionLabel number="06" text="WHY SAMMYREMI" lightMode />
+            <SectionLabel number="06" text="WHY SAMMYREMI" />
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.2}>
-            <h2 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-[#0B0D13] max-w-4xl">
+            <h2 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-neutral-900 dark:text-white max-w-4xl">
               Engineering built for business impact.
             </h2>
           </ScrollReveal>
@@ -40,16 +40,16 @@ export const WhySammyRemiSection: React.FC = () => {
 
             return (
               <ScrollReveal key={item.title} direction="up" delay={0.15 + index * 0.1}>
-                <div className="p-8 sm:p-10 rounded-2xl bg-[#F8FAFC] border border-neutral-200/80 flex flex-col gap-5 hover:border-[#387BFF]/30 hover:shadow-md transition-all duration-300 group">
-                  <div className="w-12 h-12 rounded-xl bg-[#387BFF]/10 flex items-center justify-center group-hover:bg-[#387BFF] transition-colors duration-300">
-                    <IconComponent className="w-6 h-6 text-[#387BFF] group-hover:text-white transition-colors" />
+                <div className="p-8 sm:p-10 rounded-2xl bg-[#F8FAFC] dark:bg-[#131622] border border-neutral-200/80 dark:border-white/10 flex flex-col gap-5 hover:border-[#D96B18]/40 hover:shadow-md transition-all duration-300 group">
+                  <div className="w-12 h-12 rounded-xl bg-[#D96B18]/10 flex items-center justify-center group-hover:bg-[#D96B18] transition-colors duration-300">
+                    <IconComponent className="w-6 h-6 text-[#D96B18] group-hover:text-white transition-colors" />
                   </div>
 
-                  <h3 className="font-display font-extrabold text-2xl text-[#0B0D13]">
+                  <h3 className="font-display font-extrabold text-2xl text-neutral-900 dark:text-white">
                     {item.title}
                   </h3>
 
-                  <p className="text-neutral-600 leading-relaxed text-base">
+                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-base">
                     {item.description}
                   </p>
                 </div>

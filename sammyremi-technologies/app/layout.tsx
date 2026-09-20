@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 
 const displayFont = Plus_Jakarta_Sans({
@@ -45,10 +46,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${displayFont.variable} ${sansFont.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#0B0D13] text-[#F3F4F6] font-sans selection:bg-[#387BFF] selection:text-white">
-        {children}
+      <body className="min-h-full flex flex-col bg-white dark:bg-[#0B0D13] text-neutral-900 dark:text-[#F3F4F6] font-sans selection:bg-[#D96B18] selection:text-white transition-colors duration-300">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

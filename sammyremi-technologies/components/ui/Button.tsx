@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary-blue" | "secondary-white" | "outline-dark" | "outline-light";
+  variant?: "primary" | "secondary-orange" | "secondary-white" | "outline-dark" | "outline-light";
   size?: "sm" | "md" | "lg";
   href?: string;
   icon?: boolean;
@@ -22,19 +22,19 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex items-center justify-center font-display font-semibold transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#387BFF]/50 active:scale-[0.98]";
+    "inline-flex items-center justify-center font-display font-semibold transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#D96B18]/50 active:scale-[0.98] cursor-pointer";
 
   const variantStyles = {
     primary:
-      "bg-[#387BFF] hover:bg-[#2B6BEA] text-white shadow-lg shadow-[#387BFF]/25 hover:shadow-[#387BFF]/40",
-    "secondary-blue":
-      "bg-[#387BFF]/20 hover:bg-[#387BFF]/30 text-[#60A5FA] border border-[#387BFF]/40",
+      "bg-[#D96B18] hover:bg-[#B8550B] text-white shadow-lg shadow-[#D96B18]/25 hover:shadow-[#D96B18]/40",
+    "secondary-orange":
+      "bg-[#D96B18]/15 hover:bg-[#D96B18]/25 text-[#D96B18] dark:text-[#F59E0B] border border-[#D96B18]/40",
     "secondary-white":
-      "bg-white hover:bg-neutral-100 text-[#0B0D13] shadow-md",
+      "bg-white dark:bg-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-700 text-[#0B0D13] dark:text-white shadow-md border border-neutral-200 dark:border-neutral-700",
     "outline-dark":
-      "border border-[#0B0D13]/20 hover:border-[#0B0D13] text-[#0B0D13] hover:bg-[#0B0D13]/5",
+      "border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 hover:border-[#D96B18] dark:hover:border-[#D96B18] hover:bg-[#D96B18]/10",
     "outline-light":
-      "border border-white/20 hover:border-white text-white hover:bg-white/10",
+      "border border-white/30 hover:border-white text-white hover:bg-white/10",
   };
 
   const sizeStyles = {

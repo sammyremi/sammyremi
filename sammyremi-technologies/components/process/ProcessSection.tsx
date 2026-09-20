@@ -10,17 +10,17 @@ export const ProcessSection: React.FC = () => {
   return (
     <section
       id="process"
-      className="bg-[#F4F6F9] text-[#0B0D13] py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative"
+      className="bg-[#F8FAFC] dark:bg-[#131622] text-neutral-900 dark:text-white py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative transition-colors"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
         {/* Header */}
         <div className="flex flex-col gap-4">
           <ScrollReveal direction="up" delay={0.1}>
-            <SectionLabel number="05" text="PROCESS" lightMode />
+            <SectionLabel number="05" text="PROCESS" />
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={0.2}>
-            <h2 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-[#0B0D13]">
+            <h2 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-neutral-900 dark:text-white">
               How we work
             </h2>
           </ScrollReveal>
@@ -36,24 +36,24 @@ export const ProcessSection: React.FC = () => {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: idx * 0.12 }}
               whileHover={{ y: -4 }}
-              className="bg-white p-8 rounded-2xl border border-neutral-200/80 shadow-sm flex flex-col justify-between gap-6 group hover:border-[#387BFF]/40 transition-all duration-300"
+              className="bg-white dark:bg-[#0B0D13] p-8 rounded-2xl border border-neutral-200/80 dark:border-white/10 shadow-sm flex flex-col justify-between gap-6 group hover:border-[#D96B18]/50 transition-all duration-300"
             >
               <div className="flex flex-col gap-4">
-                <span className="font-mono text-xl font-bold text-[#387BFF]">
+                <span className="font-mono text-xl font-bold text-[#D96B18]">
                   {step.number}
                 </span>
                 
-                <h3 className="font-display font-bold text-xl sm:text-2xl text-[#0B0D13] group-hover:text-[#387BFF] transition-colors">
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-neutral-900 dark:text-white group-hover:text-[#D96B18] transition-colors">
                   {step.title}
                 </h3>
 
-                <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm sm:text-base leading-relaxed">
                   {step.description}
                 </p>
               </div>
 
-              <div className="w-full h-1 bg-neutral-100 rounded-full overflow-hidden mt-4">
-                <div className="w-1/3 h-full bg-[#387BFF] group-hover:w-full transition-all duration-500 ease-out" />
+              <div className="w-full h-1 bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden mt-4">
+                <div className="w-1/3 h-full bg-[#D96B18] group-hover:w-full transition-all duration-500 ease-out" />
               </div>
             </motion.div>
           ))}

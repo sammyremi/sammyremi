@@ -8,7 +8,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="bg-[#0B0D13] text-white py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
+      className="bg-[#0B0D13] dark:bg-[#0B0D13] text-white py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden transition-colors"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
         {/* Section Header */}
@@ -33,7 +33,7 @@ export const AboutSection: React.FC = () => {
             </ScrollReveal>
           </div>
 
-          {/* Quick Metrics / Focus Box */}
+          {/* Focus Box */}
           <div className="lg:col-span-4 bg-[#131622] p-8 sm:p-10 rounded-3xl border border-white/10 flex flex-col gap-6">
             <h3 className="font-display font-bold text-xl text-white">
               Engineering Expertise
@@ -41,19 +41,19 @@ export const AboutSection: React.FC = () => {
 
             <ul className="flex flex-col gap-4 text-sm text-neutral-300 font-medium">
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#387BFF]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D96B18]" />
                 Next.js & React Architectures
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#387BFF]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D96B18]" />
                 TypeScript & Scalable Backends
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#387BFF]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D96B18]" />
                 Cloud Deployment (Fly.io, AWS)
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#387BFF]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#D96B18]" />
                 AI Agent & Workflow Automations
               </li>
             </ul>

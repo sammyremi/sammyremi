@@ -5,21 +5,42 @@
     --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Theme colors */
-    --color-dark-bg: #0B0D13;
-    --color-dark-card: #131622;
-    --color-light-bg: #FFFFFF;
-    --color-light-card: #F4F6F9;
+    /* Light Theme Tokens */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-border: rgba(0, 0, 0, 0.08);
+    --text-primary: #0B0D13;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    
+    /* Official SammyRemi Brand Colors from Logo */
+    --color-brand-orange: #D96B18;
+    --color-brand-orange-hover: #B8550B;
+    --color-brand-navy: #162C46;
     --color-accent-blue: #387BFF;
-    --color-accent-blue-hover: #2B6BEA;
-    --color-text-dark: #0B0D13;
-    --color-text-muted: #6B7280;
+  }
+
+  .dark {
+    /* Dark Theme Tokens */
+    --bg-primary: #0B0D13;
+    --bg-secondary: #131622;
+    --bg-card: #131622;
+    --bg-card-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
   }
 
   html {
     font-family: var(--font-sans);
-    color-scheme: dark light;
     scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -33,14 +54,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0D13;
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: #232738;
+  background: #D96B18;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #387BFF;
+  background: #B8550B;
 }
 
 /* Display utility font class */
@@ -49,10 +70,15 @@
   letter-spacing: -0.035em;
 }
 
-/* Glassmorphism and specialized utilities */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+/* Brand Accent Color Helpers */
+.text-brand {
+  color: #D96B18;
+}
+.bg-brand {
+  background-color: #D96B18;
+}
+.border-brand {
+  border-color: #D96B18;
 }
 
 .text-balance {
