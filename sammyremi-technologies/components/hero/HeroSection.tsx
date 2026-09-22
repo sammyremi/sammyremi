@@ -16,8 +16,8 @@ export const HeroSection: React.FC = () => {
 
   // Spring-smooth the raw scroll progress so parallax glides rather than jitters
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 22,
+    stiffness: 120,
+    damping: 30,
     restDelta: 0.001,
   });
 

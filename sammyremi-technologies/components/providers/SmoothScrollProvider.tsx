@@ -10,42 +10,21 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({
-      duration: 1.0,
-      easing: (t) => 1 - Math.pow(1 - t, 4), // easeOutQuart — snappy deceleration
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.2,
-      touchMultiplier: 1.8,
-      infinite: false,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 2.0,
     });
 
-    // Sync Lenis with GSAP ScrollTrigger so GSAP reads
-    // Lenis's virtual scroll position, not native scrollY
-    lenis.on("scroll", ScrollTrigger.update);
+    // Keep ScrollTrigger in sync with Lenis scroll position
+    lenis.on("scroll", () => ScrollTrigger.update());
 
-    ScrollTrigger.scrollerProxy(document.documentElement, {
-      scrollTop(value) {
-        if (arguments.length && value !== undefined) {
-          lenis.scrollTo(value, { immediate: true });
-        }
-        return lenis.scroll;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        };
-      },
-    });
-
-    ScrollTrigger.addEventListener("refresh", () => lenis.resize());
-    ScrollTrigger.refresh();
-
+    // Drive Lenis via GSAP ticker for frame-perfect sync
     const raf = (time: number) => {
-      lenis.raf(time);
+      lenis.raf(time * 1000);
     };
 
     gsap.ticker.add(raf);
@@ -54,8 +33,6 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     return () => {
       lenis.destroy();
       gsap.ticker.remove(raf);
-      ScrollTrigger.scrollerProxy(document.documentElement, undefined as unknown as ScrollTrigger.ScrollerProxyVars);
-      ScrollTrigger.removeEventListener("refresh", () => lenis.resize());
     };
   }, []);
 
