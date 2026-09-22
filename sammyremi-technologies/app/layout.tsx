@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
+import { SitePreloader } from "@/components/ui/SitePreloader";
 import "./globals.css";
 
 const displayFont = Plus_Jakarta_Sans({
@@ -51,6 +53,18 @@ export default function RootLayout({
       className={`${displayFont.variable} ${sansFont.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-white dark:bg-[#0B0D13] text-neutral-900 dark:text-[#F3F4F6] font-sans selection:bg-[#D96B18] selection:text-white transition-colors duration-300">
+        <NextTopLoader
+          color="#D96B18"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={300}
+          shadow="0 0 10px #D96B18,0 0 5px #D96B18"
+        />
+        <SitePreloader />
         <ThemeProvider>
           <SmoothScrollProvider>{children}</SmoothScrollProvider>
         </ThemeProvider>
