@@ -5,15 +5,15 @@ import { BrandLogo } from "@/components/navigation/BrandLogo";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0B0D13] dark:bg-[#0B0D13] text-white py-16 px-6 sm:px-8 lg:px-12 border-t border-neutral-800 transition-colors">
+    <footer className="bg-white dark:bg-[#0B0D13] text-neutral-900 dark:text-white py-16 px-6 sm:px-8 lg:px-12 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         {/* Left: Brand Identity & Contact Info */}
         <div className="flex flex-col gap-3">
           <BrandLogo />
-          <p className="text-xs text-neutral-400 font-normal">
+          <p className="text-xs text-neutral-600 dark:text-neutral-400 font-normal">
             Software Development & Digital Solutions for Business.
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-neutral-300 pt-1">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-neutral-700 dark:text-neutral-300 pt-1">
             <a
               href="mailto:officialsammyremi@gmail.com"
               className="inline-flex items-center gap-1.5 hover:text-[#D96B18] transition-colors"
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
               <Mail className="w-3.5 h-3.5 text-[#D96B18]" />
               officialsammyremi@gmail.com
             </a>
-            <span className="text-neutral-600">•</span>
+            <span className="text-neutral-400 dark:text-neutral-600">•</span>
             <a
               href="tel:+2348147468979"
               className="inline-flex items-center gap-1.5 hover:text-[#D96B18] transition-colors"
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs sm:text-sm font-medium text-neutral-400 hover:text-[#D96B18] transition-colors"
+              className="text-xs sm:text-sm font-medium text-neutral-700 dark:text-neutral-400 hover:text-[#D96B18] transition-colors"
             >
               {link.name}
             </a>

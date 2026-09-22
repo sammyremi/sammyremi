@@ -65,7 +65,7 @@ export const HeroSection: React.FC = () => {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen bg-[#0B0D13] dark:bg-[#0B0D13] text-white pt-32 pb-16 px-6 sm:px-8 lg:px-12 flex flex-col justify-between overflow-hidden transition-colors"
+      className="relative min-h-screen bg-white dark:bg-[#0B0D13] text-neutral-900 dark:text-white pt-32 pb-16 px-6 sm:px-8 lg:px-12 flex flex-col justify-between overflow-hidden transition-colors duration-300"
     >
       {/* Brand Radial ambient glow in background */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#D96B18]/15 rounded-full blur-[150px] pointer-events-none" />
@@ -88,7 +88,7 @@ export const HeroSection: React.FC = () => {
           </motion.div>
 
           {/* Headline - Editorial Line Reveal */}
-          <div className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-white">
+          <div className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-neutral-900 dark:text-white">
             {headlineLines.map((line, idx) => (
               <div key={idx} className="overflow-hidden">
                 <motion.div variants={lineVariants}>
@@ -102,7 +102,7 @@ export const HeroSection: React.FC = () => {
           <motion.p
             style={shouldReduceMotion ? {} : { y: textY }}
             variants={fadeUpVariants}
-            className="text-base sm:text-xl text-neutral-300 max-w-2xl font-normal leading-relaxed text-balance"
+            className="text-base sm:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl font-normal leading-relaxed text-balance"
           >
             SammyRemi Technologies designs and builds websites, mobile applications,
             custom business software and AI-powered solutions for businesses.
@@ -124,15 +124,15 @@ export const HeroSection: React.FC = () => {
       </motion.div>
 
       {/* Bottom Scroll Indicator & Divider Line */}
-      <div className="max-w-7xl mx-auto w-full z-10 pt-8 border-t border-white/10 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto w-full z-10 pt-8 border-t border-neutral-200 dark:border-white/10 flex items-center justify-between">
         <motion.a
           href="#opportunity"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.6 }}
-          className="inline-flex items-center gap-3 text-xs sm:text-sm text-neutral-400 hover:text-white transition-colors group cursor-pointer"
+          className="inline-flex items-center gap-3 text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 hover:text-[#D96B18] dark:hover:text-white transition-colors group cursor-pointer"
         >
-          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-white/20 group-hover:border-[#D96B18] group-hover:bg-[#D96B18]/20 transition-all">
+          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-neutral-300 dark:border-white/20 group-hover:border-[#D96B18] group-hover:bg-[#D96B18]/20 transition-all">
             <ArrowDown className="w-4 h-4 text-[#D96B18] group-hover:translate-y-0.5 transition-transform" />
           </span>
           <span>Scroll to see what your business could become</span>

@@ -8,7 +8,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="bg-[#0B0D13] dark:bg-[#0B0D13] text-white py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden transition-colors"
+      className="bg-white dark:bg-[#0B0D13] text-neutral-900 dark:text-white py-24 sm:py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-12 sm:gap-16">
         {/* Section Header */}
@@ -19,13 +19,13 @@ export const AboutSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8 flex flex-col gap-8">
             <ScrollReveal direction="up" delay={0.2}>
-              <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight">
+              <h2 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-neutral-900 dark:text-white leading-tight">
                 We bridge complex engineering and real business growth.
               </h2>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.3}>
-              <p className="text-neutral-300 text-lg sm:text-xl font-normal leading-relaxed">
+              <p className="text-neutral-700 dark:text-neutral-300 text-lg sm:text-xl font-normal leading-relaxed">
                 SammyRemi Technologies is a software development and digital solutions firm.
                 We specialize in building custom web applications, mobile products, internal business software,
                 and practical AI automations that reduce operational friction and drive long-term value.
@@ -34,12 +34,12 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* Focus Box */}
-          <div className="lg:col-span-4 bg-[#131622] p-8 sm:p-10 rounded-3xl border border-white/10 flex flex-col gap-6">
-            <h3 className="font-display font-bold text-xl text-white">
+          <div className="lg:col-span-4 bg-[#F8FAFC] dark:bg-[#131622] p-8 sm:p-10 rounded-3xl border border-neutral-200/80 dark:border-white/10 flex flex-col gap-6 shadow-sm">
+            <h3 className="font-display font-bold text-xl text-neutral-900 dark:text-white">
               Engineering Expertise
             </h3>
 
-            <ul className="flex flex-col gap-4 text-sm text-neutral-300 font-medium">
+            <ul className="flex flex-col gap-4 text-sm text-neutral-700 dark:text-neutral-300 font-medium">
               <li className="flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#D96B18]" />
                 Next.js & React Architectures
