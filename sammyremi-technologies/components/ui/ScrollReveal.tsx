@@ -18,8 +18,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   direction = "up",
   delay = 0,
-  duration = 0.7,
-  distance = 35,
+  duration = 0.75,
+  distance = 28,
   className = "",
   staggerChildren,
   once = true,
@@ -60,7 +60,8 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   const transition = {
     duration,
     delay,
-    ease: [0.215, 0.61, 0.355, 1.0] as const, // cubic-bezier matching Framer editorial ease
+    // Spring-like cubic-bezier for a natural, premium feel
+    ease: [0.22, 1, 0.36, 1] as const,
     ...(staggerChildren ? { staggerChildren } : {}),
   };
 
@@ -68,9 +69,12 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     <motion.div
       initial={initial}
       whileInView={animate}
-      viewport={{ once, margin: "-80px" }}
+      // Larger margin so elements start animating earlier — no jarring pop-in
+      viewport={{ once, margin: "-40px 0px" }}
       transition={transition}
       className={className}
+      // Promote to GPU layer to eliminate paint jank
+      style={{ willChange: "opacity, transform" }}
     >
       {children}
     </motion.div>

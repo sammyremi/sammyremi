@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -14,11 +14,17 @@ export const HeroSection: React.FC = () => {
     offset: ["start start", "end start"],
   });
 
-  // Scroll-driven animation transforms matching valeriiagolma style
-  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
-  const titleY = useTransform(scrollYProgress, [0, 1], [0, 90]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 45]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  // Spring-smooth the raw scroll progress so parallax glides rather than jitters
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 22,
+    restDelta: 0.001,
+  });
+
+  const titleScale = useTransform(smoothProgress, [0, 1], [1, 0.92]);
+  const titleY = useTransform(smoothProgress, [0, 1], [0, 90]);
+  const textY = useTransform(smoothProgress, [0, 1], [0, 45]);
+  const opacity = useTransform(smoothProgress, [0, 0.85], [1, 0]);
 
   const headlineLines = [
     "We build digital products",
@@ -71,7 +77,7 @@ export const HeroSection: React.FC = () => {
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#D96B18]/15 rounded-full blur-[150px] pointer-events-none" />
 
       <motion.div
-        style={shouldReduceMotion ? {} : { scale: titleScale, y: titleY, opacity }}
+        style={shouldReduceMotion ? {} : { scale: titleScale, y: titleY, opacity, willChange: "transform, opacity" }}
         className="max-w-7xl mx-auto w-full my-auto py-12 z-10"
       >
         <motion.div

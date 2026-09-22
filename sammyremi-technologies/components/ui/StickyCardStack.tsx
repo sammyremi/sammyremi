@@ -21,29 +21,46 @@ export const StickyCardStack: React.FC<StickyCardStackProps> = ({
 
     const cards = gsap.utils.toArray<HTMLElement>(".sticky-card-item");
 
+    const triggers: ScrollTrigger[] = [];
+
     cards.forEach((card, index) => {
-      if (index === cards.length - 1) return; // Last card doesn't shrink
+      if (index === cards.length - 1) return;
 
       const nextCard = cards[index + 1];
 
-      gsap.to(card, {
-        scale: 0.93,
-        opacity: 0.6,
-        ease: "none",
-        scrollTrigger: {
-          trigger: nextCard,
-          start: "top bottom",
-          end: "top top",
-          scrub: true,
+      // Set will-change for GPU compositing
+      gsap.set(card, { willChange: "transform, opacity" });
+
+      const st = ScrollTrigger.create({
+        trigger: nextCard,
+        start: "top 90%",
+        end: "top 30%",
+        scrub: 1.2, // numeric scrub = smooth lag, not instant
+        onUpdate: (self) => {
+          const progress = self.progress;
+          gsap.set(card, {
+            scale: gsap.utils.interpolate(1, 0.94, progress),
+            opacity: gsap.utils.interpolate(1, 0.55, progress),
+          });
         },
       });
+
+      triggers.push(st);
     });
+
+    return () => {
+      triggers.forEach((t) => t.kill());
+    };
   }, []);
 
   return (
     <div ref={containerRef} className={`flex flex-col gap-12 ${className}`}>
       {children.map((child, index) => (
-        <div key={index} className="sticky-card-item sticky top-28">
+        <div
+          key={index}
+          className="sticky-card-item sticky top-28"
+          style={{ willChange: "transform, opacity" }}
+        >
           {child}
         </div>
       ))}

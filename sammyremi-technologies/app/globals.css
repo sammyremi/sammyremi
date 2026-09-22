@@ -51,6 +51,19 @@
     font-family: var(--font-display);
     letter-spacing: -0.03em;
   }
+
+  /* Promote sticky/animated elements to their own GPU composite layer */
+  .sticky-card-item {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Subpixel font smoothing for crisp text during animations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 /* Custom scrollbar */
