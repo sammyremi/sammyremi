@@ -112,14 +112,14 @@ export const caseStudiesData: CaseStudy[] = [
     tags: ["Prospecting Platform", "SaaS", "Lead Intelligence", "Automated Search"],
   },
   {
-    id: "medex",
+    id: "remi-homes",
     number: "02",
-    client: "MEDEX",
-    title: "Medical supply procurement, connected and streamlined.",
+    client: "REMI HOMES",
+    title: "Where Lagos luxury real estate meets world-class digital presence.",
     description:
-      "A comprehensive medical supply procurement and logistics platform involving manufacturers, importers, distributors, and retailers. Automates quotes, orders, invoices, payments, deliveries, and compliance tracking.",
+      "A premium luxury real estate website for Nigeria's foremost high-end property developer — showcasing oceanfront villas, Ikoyi penthouses, and Banana Island estates. Built with cinematic scroll animations, curated property galleries, and a seamless inquiry experience designed to attract high-net-worth buyers.",
     accentBg: "light",
-    tags: ["Supply Chain Logistics", "B2B Procurement", "Regulatory Workflows", "Multi-Tier Commerce"],
+    tags: ["Luxury Real Estate", "Premium Website", "Property Showcase", "High-Net-Worth Market"],
   },
 ];
 
