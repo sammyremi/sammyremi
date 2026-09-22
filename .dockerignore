@@ -1,39 +1,34 @@
-# See https://docs.docker.com/engine/reference/builder/#dockerignore-file for more about ignoring files.
+# Git
+.git/
+.github/
 
-# Ignore git directory.
-/.git/
+# Node / Next.js
+node_modules/
+.next/
+sammyremi-technologies/node_modules/
+sammyremi-technologies/.next/
 
-# Ignore bundler config.
-/.bundle
+# Environment files
+.env*
+!.env.example
+sammyremi-technologies/.env*
+!sammyremi-technologies/.env.example
 
-# Ignore all default key files.
+# Rails secrets
 /config/master.key
 /config/credentials/*.key
 
-# Ignore all environment files.
-/.env*
-!/.env.example
-
-# Ignore all logfiles and tempfiles.
+# Rails runtime files
 /log/*
 /tmp/*
-!/log/.keep
-!/tmp/.keep
-
-# Ignore pidfiles, but keep the directory.
-/tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
-
-# Ignore storage (uploaded files in development and any SQLite databases).
 /storage/*
-!/storage/.keep
-/tmp/storage/*
-!/tmp/storage/
-!/tmp/storage/.keep
 
-# Ignore assets.
-/node_modules/
+# Rails dependency/build files
+.bundle/
+
+# Rails compiled assets
 /app/assets/builds/*
-!/app/assets/builds/.keep
 /public/assets
+
+# OS files
+.DS_Store
