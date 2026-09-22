@@ -37,7 +37,7 @@ export const SelectedWorkSection: React.FC = () => {
                 key={project.id}
                 className={`group relative rounded-3xl p-8 sm:p-14 transition-all duration-300 overflow-hidden ${
                   isDarkCard
-                    ? "bg-[#0B0D13] dark:bg-[#131622] text-white shadow-xl border border-white/10"
+                    ? "bg-neutral-900 dark:bg-[#131622] text-white shadow-xl border border-white/10"
                     : "bg-[#F8FAFC] dark:bg-[#131622] text-neutral-900 dark:text-white border border-neutral-200/80 dark:border-white/10 shadow-sm"
                 }`}
               >
@@ -51,18 +51,18 @@ export const SelectedWorkSection: React.FC = () => {
                       {project.number} — {project.client}
                     </span>
 
-                    <span className="w-10 h-10 rounded-full border border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-white flex items-center justify-center group-hover:bg-[#D96B18] group-hover:text-white group-hover:border-[#D96B18] transition-all duration-300 group-hover:scale-110">
+                    <span className={`w-10 h-10 rounded-full border flex items-center justify-center group-hover:bg-[#D96B18] group-hover:text-white group-hover:border-[#D96B18] transition-all duration-300 group-hover:scale-110 ${isDarkCard ? 'border-white/30 text-white' : 'border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-white'}`}>
                       <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </span>
                   </div>
 
                   {/* Headline */}
-                  <h3 className="font-display font-extrabold text-3xl sm:text-5xl tracking-tight leading-tight text-neutral-900 dark:text-white">
+                  <h3 className={`font-display font-extrabold text-3xl sm:text-5xl tracking-tight leading-tight ${isDarkCard ? 'text-white' : 'text-neutral-900 dark:text-white'}`}>
                     {project.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-base sm:text-xl font-normal leading-relaxed text-neutral-600 dark:text-neutral-300">
+                  <p className={`text-base sm:text-xl font-normal leading-relaxed ${isDarkCard ? 'text-neutral-300' : 'text-neutral-600 dark:text-neutral-300'}`}>
                     {project.description}
                   </p>
 
@@ -71,7 +71,7 @@ export const SelectedWorkSection: React.FC = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs font-semibold px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700 shadow-xs"
+                        className={`text-xs font-semibold px-4 py-1.5 rounded-full shadow-xs ${isDarkCard ? 'bg-white/10 text-neutral-200 border border-white/20' : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700'}`}
                       >
                         {tag}
                       </span>
