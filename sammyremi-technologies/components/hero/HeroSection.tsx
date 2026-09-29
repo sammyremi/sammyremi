@@ -94,15 +94,15 @@ export const HeroSection: React.FC = () => {
           </motion.div>
 
           {/* Headline - Editorial Line Reveal */}
-          <div className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-neutral-900 dark:text-white">
+          <h1 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-neutral-900 dark:text-white">
             {headlineLines.map((line, idx) => (
-              <div key={idx} className="overflow-hidden">
-                <motion.div variants={lineVariants}>
+              <span key={idx} className="block overflow-hidden">
+                <motion.span variants={lineVariants} className="block">
                   {line}
-                </motion.div>
-              </div>
+                </motion.span>
+              </span>
             ))}
-          </div>
+          </h1>
 
           {/* Supporting Copy */}
           <motion.p

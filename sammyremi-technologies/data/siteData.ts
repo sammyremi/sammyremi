@@ -107,18 +107,28 @@ export const caseStudiesData: CaseStudy[] = [
     client: "BIZZ-HUNTER",
     title: "Find the businesses worth reaching out to.",
     description:
-      "A business prospecting platform that helps freelancers, agencies and sales teams discover businesses that may become potential customers.",
+      "An AI-powered business prospecting platform that helps freelancers, agencies, and sales teams discover businesses that could become their next customers.",
     accentBg: "dark",
     tags: ["Prospecting Platform", "SaaS", "Lead Intelligence", "Automated Search"],
   },
   {
-    id: "remi-homes",
+    id: "medex",
     number: "02",
+    client: "MEDEX",
+    title: "Streamlined medical supply procurement and logistics.",
+    description:
+      "A medical supply procurement and logistics platform connecting manufacturers, importers, distributors, and retailers with automated quotations, orders, invoicing, payments, delivery tracking, and regulatory compliance workflows.",
+    accentBg: "light",
+    tags: ["Medical Supply Chain", "Procurement Platform", "B2B Logistics", "Regulatory Workflows"],
+  },
+  {
+    id: "remi-homes",
+    number: "03",
     client: "REMI HOMES",
     title: "Where Lagos luxury real estate meets world-class digital presence.",
     description:
       "A premium luxury real estate website for Nigeria's foremost high-end property developer — showcasing oceanfront villas, Ikoyi penthouses, and Banana Island estates. Built with cinematic scroll animations, curated property galleries, and a seamless inquiry experience designed to attract high-net-worth buyers.",
-    accentBg: "light",
+    accentBg: "dark",
     tags: ["Luxury Real Estate", "Premium Website", "Property Showcase", "High-Net-Worth Market"],
   },
 ];
