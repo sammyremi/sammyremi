@@ -17,6 +17,7 @@ interface FormData {
 
 const serviceOptions = [
   "Website Development",
+  "Search Engine Optimization",
   "Mobile Application",
   "Custom Business Software",
   "Backend & APIs",

@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "SammyRemi Technologies — Software Development & Digital Solutions",
+    default: "SammyRemi Technologies | Website, Mobile App & Software Development",
     template: "%s | SammyRemi Technologies",
   },
   description: siteConfig.description,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: "SammyRemi Technologies — Software Development & Digital Solutions",
+    title: "SammyRemi Technologies | Website, Mobile App & Software Development",
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SammyRemi Technologies — Software Development & Digital Solutions",
+    title: "SammyRemi Technologies | Website, Mobile App & Software Development",
     description: siteConfig.description,
     images: ["/logo.png"],
   },
@@ -84,6 +84,9 @@ export const metadata: Metadata = {
       { url: "/logo.png", type: "image/png" },
     ],
     apple: [{ url: "/logo.png" }],
+  },
+  verification: {
+    google: "RTacugKWzy9MKFM3RfDgdCTv2e5XYiQGFeVHSzbO118",
   },
 };
 

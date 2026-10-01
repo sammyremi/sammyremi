@@ -37,6 +37,22 @@ export const JsonLd: React.FC = () => {
     inLanguage: "en-US",
   };
 
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/#webpage`,
+    url: siteConfig.url,
+    name: "SammyRemi Technologies | Website, Mobile App & Software Development",
+    description: siteConfig.description,
+    isPartOf: {
+      "@id": `${siteConfig.url}/#website`,
+    },
+    about: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+    inLanguage: "en-US",
+  };
+
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -56,6 +72,15 @@ export const JsonLd: React.FC = () => {
             name: "Website Development",
             description:
               "Modern, responsive websites and web applications designed around business goals.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Search Engine Optimization",
+            description:
+              "Technical SEO, on-page optimization, structured data, Google Search Console setup, performance improvements, and business search visibility.",
           },
         },
         {
@@ -107,6 +132,10 @@ export const JsonLd: React.FC = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
       />
       <script
         type="application/ld+json"

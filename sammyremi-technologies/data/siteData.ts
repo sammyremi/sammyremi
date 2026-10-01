@@ -47,12 +47,29 @@ export const servicesData: ServiceItem[] = [
       "Custom Web Applications",
       "High-Conversion Landing Pages",
       "Headless CMS Integration",
-      "Performance & SEO Optimization",
+      "Performance Optimization",
+      "SEO-Friendly Architecture",
+      "Conversion-Focused UX",
+    ],
+  },
+  {
+    id: "seo",
+    number: "02",
+    title: "Search Engine Optimization",
+    description:
+      "We optimize your website so search engines can better understand your business, while improving the experience for the people searching for your services.",
+    details: [
+      "Technical SEO & Site Structure",
+      "On-Page SEO & Content Optimization",
+      "Google Search Console & Indexing",
+      "Structured Data & Schema",
+      "Performance & Core Web Vitals",
+      "Local & Business Search Visibility",
     ],
   },
   {
     id: "mobile-apps",
-    number: "02",
+    number: "03",
     title: "Mobile Applications",
     description: "Mobile experiences that help businesses serve customers and operate more efficiently.",
     details: [
@@ -64,7 +81,7 @@ export const servicesData: ServiceItem[] = [
   },
   {
     id: "custom-software",
-    number: "03",
+    number: "04",
     title: "Custom Business Software",
     description: "Software designed around your actual workflow — not a generic tool.",
     details: [
@@ -76,7 +93,7 @@ export const servicesData: ServiceItem[] = [
   },
   {
     id: "backend-apis",
-    number: "04",
+    number: "05",
     title: "Backend & APIs",
     description: "Reliable backend systems, APIs and integrations that power your digital product.",
     details: [
@@ -88,7 +105,7 @@ export const servicesData: ServiceItem[] = [
   },
   {
     id: "ai-automation",
-    number: "05",
+    number: "06",
     title: "AI & Automation",
     description: "Practical AI integrations and automation that reduce repetitive work.",
     details: [
