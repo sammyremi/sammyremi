@@ -15,6 +15,7 @@ export interface CaseStudy {
   accentBg: "dark" | "light";
   tags: string[];
   metrics?: string;
+  link?: string;
 }
 
 export interface ProcessStep {
@@ -119,8 +120,30 @@ export const servicesData: ServiceItem[] = [
 
 export const caseStudiesData: CaseStudy[] = [
   {
-    id: "bizz-hunter",
+    id: "nova-car",
     number: "01",
+    client: "NOVA CAR",
+    title: "A premium luxury car dealership website designed for buying and renting high-end vehicles.",
+    description:
+      "Built with cinematic scroll-driven vehicle animations, interactive car showcases, responsive layouts, and a refined premium automotive experience.",
+    accentBg: "dark",
+    tags: ["Luxury Automotive", "Car Dealership", "Vehicle Sales & Rentals", "Interactive Experience"],
+    link: "https://sammyremi.github.io/luxury-car/",
+  },
+  {
+    id: "remi-homes",
+    number: "02",
+    client: "REMI HOMES",
+    title: "Where Lagos luxury real estate meets world-class digital presence.",
+    description:
+      "A premium luxury real estate website for Nigeria's foremost high-end property developer — showcasing oceanfront villas, Ikoyi penthouses, and Banana Island estates. Built with cinematic scroll animations, curated property galleries, and a seamless inquiry experience designed to attract high-net-worth buyers.",
+    accentBg: "light",
+    tags: ["Luxury Real Estate", "Premium Website", "Property Showcase", "High-Net-Worth Market"],
+    link: "https://sammyremi.github.io/Luxury-Real-Estate/",
+  },
+  {
+    id: "bizz-hunter",
+    number: "03",
     client: "BIZZ-HUNTER",
     title: "Find the businesses worth reaching out to.",
     description:
@@ -130,23 +153,13 @@ export const caseStudiesData: CaseStudy[] = [
   },
   {
     id: "medex",
-    number: "02",
+    number: "04",
     client: "MEDEX",
     title: "Streamlined medical supply procurement and logistics.",
     description:
       "A medical supply procurement and logistics platform connecting manufacturers, importers, distributors, and retailers with automated quotations, orders, invoicing, payments, delivery tracking, and regulatory compliance workflows.",
     accentBg: "light",
     tags: ["Medical Supply Chain", "Procurement Platform", "B2B Logistics", "Regulatory Workflows"],
-  },
-  {
-    id: "remi-homes",
-    number: "03",
-    client: "REMI HOMES",
-    title: "Where Lagos luxury real estate meets world-class digital presence.",
-    description:
-      "A premium luxury real estate website for Nigeria's foremost high-end property developer — showcasing oceanfront villas, Ikoyi penthouses, and Banana Island estates. Built with cinematic scroll animations, curated property galleries, and a seamless inquiry experience designed to attract high-net-worth buyers.",
-    accentBg: "dark",
-    tags: ["Luxury Real Estate", "Premium Website", "Property Showcase", "High-Net-Worth Market"],
   },
 ];
 

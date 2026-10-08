@@ -51,9 +51,21 @@ export const SelectedWorkSection: React.FC = () => {
                       {project.number} — {project.client}
                     </span>
 
-                    <span className={`w-10 h-10 rounded-full border flex items-center justify-center group-hover:bg-[#D96B18] group-hover:text-white group-hover:border-[#D96B18] transition-all duration-300 group-hover:scale-110 ${isDarkCard ? 'border-white/30 text-white' : 'border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-white'}`}>
-                      <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </span>
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`w-10 h-10 rounded-full border flex items-center justify-center group-hover:bg-[#D96B18] group-hover:text-white group-hover:border-[#D96B18] transition-all duration-300 group-hover:scale-110 ${isDarkCard ? 'border-white/30 text-white' : 'border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-white'}`}
+                        aria-label={`View ${project.client} project`}
+                      >
+                        <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                      </a>
+                    ) : (
+                      <span className={`w-10 h-10 rounded-full border flex items-center justify-center group-hover:bg-[#D96B18] group-hover:text-white group-hover:border-[#D96B18] transition-all duration-300 group-hover:scale-110 ${isDarkCard ? 'border-white/30 text-white' : 'border-neutral-300 dark:border-neutral-700 text-neutral-800 dark:text-white'}`}>
+                        <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </span>
+                    )}
                   </div>
 
                   {/* Headline */}
