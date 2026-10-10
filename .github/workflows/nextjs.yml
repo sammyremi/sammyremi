@@ -5,8 +5,18 @@ on:
     branches:
       - main
     paths:
-      - "sammyremi-technologies/**"
+      - "app/**"
+      - "components/**"
+      - "lib/**"
+      - "data/**"
+      - "public/**"
       - ".github/workflows/nextjs.yml"
+      - "package.json"
+      - "package-lock.json"
+      - "next.config.ts"
+      - "postcss.config.mjs"
+      - "tsconfig.json"
+      - "eslint.config.mjs"
   workflow_dispatch:
 
 permissions:
@@ -32,48 +42,35 @@ jobs:
         with:
           node-version: "24"
           cache: npm
-          cache-dependency-path: sammyremi-technologies/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install Dependencies
         run: npm ci
-        working-directory: sammyremi-technologies
 
       - name: Build Static Website
         run: npm run build
-        working-directory: sammyremi-technologies
+        env:
+          NEXT_PUBLIC_BASE_PATH: /sammyremi
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Verify Static Export
         run: |
-          if [ ! -d "sammyremi-technologies/out" ]; then
-            echo "Error: Next.js static export directory was not generated."
-            exit 1
-          fi
+          test -d out || (echo "Missing out directory" && exit 1)
+          test -f out/index.html || (echo "Missing out/index.html" && exit 1)
+          test -f out/CNAME || (echo "Missing out/CNAME" && exit 1)
 
-          if [ ! -f "sammyremi-technologies/out/index.html" ]; then
-            echo "Error: out/index.html was not generated."
-            exit 1
-          fi
+          touch out/.nojekyll
 
-          if [ ! -f "sammyremi-technologies/out/CNAME" ]; then
-            echo "Error: out/CNAME is missing. Check public/CNAME."
-            exit 1
-          fi
-
-          if [ ! -f "sammyremi-technologies/out/.nojekyll" ]; then
-            echo "Warning: out/.nojekyll was missing; creating it now."
-            touch sammyremi-technologies/out/.nojekyll
-          fi
-
-          echo "Static export verified successfully."
-          ls -la sammyremi-technologies/out
+          echo "Checking exported assets..."
+          find out/_next -maxdepth 3 -type f | head -30
+          echo "Static export verified."
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: sammyremi-technologies/out
+          path: out
 
   deploy:
     name: Deploy to GitHub Pages
