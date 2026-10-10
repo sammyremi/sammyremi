@@ -6,6 +6,7 @@ import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvide
 import { SitePreloader } from "@/components/ui/SitePreloader";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/site";
+import { getAssetPath } from "@/lib/assets";
 import "./globals.css";
 
 const displayFont = Plus_Jakarta_Sans({
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/logo.png",
+        url: getAssetPath("/logo.png"),
         width: 500,
         height: 500,
         alt: "SammyRemi Technologies Official Logo",
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SammyRemi Technologies | Website, Mobile App & Software Development",
     description: siteConfig.description,
-    images: ["/logo.png"],
+    images: [getAssetPath("/logo.png")],
   },
   robots: {
     index: true,
@@ -80,10 +81,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/logo.png", type: "image/png" },
+      { url: getAssetPath("/favicon.ico") },
+      { url: getAssetPath("/logo.png"), type: "image/png" },
     ],
-    apple: [{ url: "/logo.png" }],
+    apple: [{ url: getAssetPath("/logo.png") }],
   },
   verification: {
     google: "RTacugKWzy9MKFM3RfDgdCTv2e5XYiQGFeVHSzbO118",

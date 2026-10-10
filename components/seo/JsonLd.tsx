@@ -1,5 +1,6 @@
 import React from "react";
 import { siteConfig } from "@/lib/site";
+import { getAssetPath } from "@/lib/assets";
 
 export const JsonLd: React.FC = () => {
   const organizationSchema = {
@@ -10,7 +11,7 @@ export const JsonLd: React.FC = () => {
     url: siteConfig.url,
     logo: {
       "@type": "ImageObject",
-      url: `${siteConfig.url}/logo.png`,
+      url: `${siteConfig.url}${getAssetPath("/logo.png")}`,
       caption: siteConfig.name,
     },
     email: siteConfig.email,

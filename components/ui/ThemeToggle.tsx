@@ -6,23 +6,23 @@ import { Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const emptySubscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }) => {
-  const { setTheme, resolvedTheme } = useTheme();
-  
-  const isClient = useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false
-  );
+  const { setTheme, resolvedTheme, theme } = useTheme();
+  const isClient = useSyncExternalStore(emptySubscribe, getSnapshot, getServerSnapshot);
 
   if (!isClient) {
     return (
-      <div className={`w-9 h-9 rounded-full bg-neutral-200/50 dark:bg-neutral-800/50 ${className}`} />
+      <div
+        className={`w-9 h-9 rounded-full bg-neutral-200/50 dark:bg-neutral-800/50 ${className}`}
+        aria-hidden="true"
+      />
     );
   }
 
-  const isDark = resolvedTheme === "dark";
+  const isDark = resolvedTheme === "dark" || theme === "dark";
 
   return (
     <button
@@ -38,8 +38,8 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }
           rotate: isDark ? 0 : 90,
           opacity: isDark ? 1 : 0,
         }}
-        transition={{ duration: 0.25, ease: "easeInOut" }}
-        className="absolute"
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="absolute flex items-center justify-center"
       >
         <Moon className="w-4 h-4 text-[#D96B18]" />
       </motion.div>
@@ -51,8 +51,8 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }
           rotate: isDark ? -90 : 0,
           opacity: isDark ? 0 : 1,
         }}
-        transition={{ duration: 0.25, ease: "easeInOut" }}
-        className="absolute"
+        transition={{ duration: 0.2, ease: "easeInOut" }}
+        className="absolute flex items-center justify-center"
       >
         <Sun className="w-4 h-4 text-[#D96B18]" />
       </motion.div>

@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetPath } from "@/lib/assets";
 
 interface BrandLogoProps {
   className?: string;
@@ -21,7 +22,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       {/* Official Emblem Container */}
       <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white dark:bg-white/90 p-1 flex items-center justify-center shadow-sm border border-neutral-200 dark:border-white/20 transition-transform duration-300 group-hover:scale-105 shrink-0 overflow-hidden">
         <Image
-          src="/logo-sm.webp"
+          src={getAssetPath("/logo-sm.webp")}
           alt="SammyRemi Technologies Logo"
           width={40}
           height={40}
