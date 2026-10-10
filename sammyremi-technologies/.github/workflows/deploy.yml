@@ -1,0 +1,71 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Runs on every push to the main branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Grant the GITHUB_TOKEN the permissions required by the Pages deployment action
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Prevent concurrent deployments; cancel any in-progress run when a newer one
+# starts, but do not cancel an in-progress *deployment* to avoid leaving Pages
+# in a half-updated state.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ─── Build ──────────────────────────────────────────────────────────────────
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        # Use the existing lockfile so CI matches local installs exactly.
+        run: npm ci
+
+      - name: Build static export
+        # NEXT_PUBLIC_ vars are baked into the static bundle at build time.
+        # If you add future NEXT_PUBLIC_ env vars, add them here or in
+        # Settings → Secrets and variables → Actions → Repository variables.
+        run: npm run build
+        env:
+          # Suppress Next.js telemetry in CI
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # next.config.ts sets output: "export", so Next.js writes to ./out
+          path: ./out
+
+  # ─── Deploy ─────────────────────────────────────────────────────────────────
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      # This URL will show the live Pages URL in the workflow summary
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
