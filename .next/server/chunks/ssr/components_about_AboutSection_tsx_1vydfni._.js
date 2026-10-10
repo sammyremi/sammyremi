@@ -1,0 +1,3 @@
+module.exports=[27485,a=>{"use strict";a.s(["AboutSection",()=>b]);let b=(0,a.i(11857).registerClientReference)(function(){throw Error("Attempted to call AboutSection() from the server but AboutSection is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/components/about/AboutSection.tsx","AboutSection")},58801,a=>{"use strict";var b=a.i(27485);a.n(b)},48108,function(a){a.n(a.i(58801))}];
+
+//# sourceMappingURL=components_about_AboutSection_tsx_1vydfni._.js.map

@@ -1,0 +1,3 @@
+module.exports=[23751,a=>{"use strict";a.s(["WhySammyRemiSection",()=>b]);let b=(0,a.i(11857).registerClientReference)(function(){throw Error("Attempted to call WhySammyRemiSection() from the server but WhySammyRemiSection is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/components/why/WhySammyRemiSection.tsx","WhySammyRemiSection")},53263,a=>{"use strict";var b=a.i(23751);a.n(b)},19117,function(a){a.n(a.i(53263))}];
+
+//# sourceMappingURL=components_why_WhySammyRemiSection_tsx_051_ufg._.js.map

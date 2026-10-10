@@ -1,0 +1,3 @@
+module.exports=[60128,a=>{"use strict";a.s(["ProcessSection",()=>b]);let b=(0,a.i(11857).registerClientReference)(function(){throw Error("Attempted to call ProcessSection() from the server but ProcessSection is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/components/process/ProcessSection.tsx","ProcessSection")},32788,a=>{"use strict";var b=a.i(60128);a.n(b)},74682,function(a){a.n(a.i(32788))}];
+
+//# sourceMappingURL=components_process_ProcessSection_tsx_0pvvtj3._.js.map

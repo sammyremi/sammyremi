@@ -1,0 +1,3 @@
+module.exports=[72399,a=>{"use strict";a.s(["WhatsAppButton",()=>b]);let b=(0,a.i(11857).registerClientReference)(function(){throw Error("Attempted to call WhatsAppButton() from the server but WhatsAppButton is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.")},"[project]/components/ui/WhatsAppButton.tsx","WhatsAppButton")},1416,a=>{"use strict";var b=a.i(72399);a.n(b)},10274,function(a){a.n(a.i(1416))}];
+
+//# sourceMappingURL=components_ui_WhatsAppButton_tsx_1wmqh-a._.js.map
