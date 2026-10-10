@@ -5,33 +5,47 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function SitePreloader() {
   const [progress, setProgress] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    if (typeof window === "undefined") return true;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const hasSeen = sessionStorage.getItem("sr_preloaded");
+    return !hasSeen && !prefersReduced;
+  });
 
   useEffect(() => {
-    // Prevent scrolling during preloader
-    document.body.style.overflow = "hidden";
+    if (!isLoading) return;
 
-    const duration = 1800; // ms
-    const intervalTime = 20;
+    const isMobile = typeof window !== "undefined" && (window.innerWidth < 768 || "ontouchstart" in window);
+
+    // Faster preloader timing: 350ms on mobile, 600ms on desktop (down from 1800ms)
+    const duration = isMobile ? 350 : 600;
+    const intervalTime = 25;
     const steps = duration / intervalTime;
     let currentStep = 0;
 
+    // Lock body scroll only while actively loading
+    document.body.style.overflow = "hidden";
+
     const timer = setInterval(() => {
       currentStep += 1;
-      // Easing progress curve for natural loading feel
       const easeProgress = Math.min(
         100,
         Math.round(Math.pow(currentStep / steps, 0.85) * 100)
       );
-      
+
       setProgress(easeProgress);
 
       if (currentStep >= steps) {
         clearInterval(timer);
+        try {
+          sessionStorage.setItem("sr_preloaded", "1");
+        } catch {
+          // ignore storage errors
+        }
         setTimeout(() => {
           setIsLoading(false);
           document.body.style.overflow = "";
-        }, 300);
+        }, 150);
       }
     }, intervalTime);
 
@@ -39,7 +53,9 @@ export function SitePreloader() {
       clearInterval(timer);
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [isLoading]);
+
+  if (!isLoading) return null;
 
   return (
     <AnimatePresence mode="wait">
@@ -49,7 +65,7 @@ export function SitePreloader() {
           initial={{ y: 0 }}
           exit={{ 
             y: "-100%", 
-            transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } 
+            transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } 
           }}
           className="fixed inset-0 z-[99999] flex flex-col justify-between bg-[#0B0D13] text-white p-8 sm:p-14 select-none pointer-events-auto"
         >

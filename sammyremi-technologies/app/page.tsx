@@ -1,15 +1,29 @@
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navigation/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { OpportunitySection } from "@/components/opportunity/OpportunitySection";
 import { ServicesSection } from "@/components/services/ServicesSection";
 import { MakeTheShiftSection } from "@/components/shift/MakeTheShiftSection";
-import { SelectedWorkSection } from "@/components/work/SelectedWorkSection";
-import { ProcessSection } from "@/components/process/ProcessSection";
-import { WhySammyRemiSection } from "@/components/why/WhySammyRemiSection";
-import { AboutSection } from "@/components/about/AboutSection";
-import { FinalCtaSection } from "@/components/cta/FinalCtaSection";
 import { Footer } from "@/components/navigation/Footer";
-import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+
+const SelectedWorkSection = dynamic(
+  () => import("@/components/work/SelectedWorkSection").then((mod) => mod.SelectedWorkSection)
+);
+const ProcessSection = dynamic(
+  () => import("@/components/process/ProcessSection").then((mod) => mod.ProcessSection)
+);
+const WhySammyRemiSection = dynamic(
+  () => import("@/components/why/WhySammyRemiSection").then((mod) => mod.WhySammyRemiSection)
+);
+const AboutSection = dynamic(
+  () => import("@/components/about/AboutSection").then((mod) => mod.AboutSection)
+);
+const FinalCtaSection = dynamic(
+  () => import("@/components/cta/FinalCtaSection").then((mod) => mod.FinalCtaSection)
+);
+const WhatsAppButton = dynamic(
+  () => import("@/components/ui/WhatsAppButton").then((mod) => mod.WhatsAppButton)
+);
 
 export default function Home() {
   return (

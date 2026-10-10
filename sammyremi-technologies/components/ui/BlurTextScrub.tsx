@@ -23,16 +23,18 @@ export const BlurTextScrub: React.FC<BlurTextScrubProps> = ({
 
     const el = containerRef.current;
 
+    const isMobile = typeof window !== "undefined" && (window.innerWidth < 768 || "ontouchstart" in window);
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el,
         {
-          filter: "blur(10px)",
+          filter: isMobile ? "none" : "blur(8px)",
           opacity: 0.3,
           y: 30,
         },
         {
-          filter: "blur(0px)",
+          filter: isMobile ? "none" : "blur(0px)",
           opacity: 1,
           y: 0,
           ease: "none",
@@ -40,7 +42,8 @@ export const BlurTextScrub: React.FC<BlurTextScrubProps> = ({
             trigger: el,
             start: "top 85%",
             end: "top 45%",
-            scrub: 0.8,
+            scrub: isMobile ? false : 0.8,
+            toggleActions: isMobile ? "play none none reverse" : undefined,
           },
         }
       );

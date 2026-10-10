@@ -9,6 +9,17 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    const isTouch = typeof window !== "undefined" && ("ontouchstart" in window || navigator.maxTouchPoints > 0 || window.innerWidth < 768);
+
+    if (isTouch) {
+      // On mobile / touch devices, rely on native GPU-accelerated touch scroll
+      const handleNativeScroll = () => ScrollTrigger.update();
+      window.addEventListener("scroll", handleNativeScroll, { passive: true });
+      return () => {
+        window.removeEventListener("scroll", handleNativeScroll);
+      };
+    }
+
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -16,7 +27,7 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1.0,
-      touchMultiplier: 2.0,
+      touchMultiplier: 1.0,
     });
 
     // Keep ScrollTrigger in sync with Lenis scroll position
@@ -28,7 +39,6 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
     };
 
     gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();

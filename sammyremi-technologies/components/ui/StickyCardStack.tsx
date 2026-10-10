@@ -19,8 +19,8 @@ export const StickyCardStack: React.FC<StickyCardStackProps> = ({
     if (!containerRef.current) return;
     gsap.registerPlugin(ScrollTrigger);
 
+    const isMobile = typeof window !== "undefined" && (window.innerWidth < 768 || "ontouchstart" in window);
     const cards = gsap.utils.toArray<HTMLElement>(".sticky-card-item");
-
     const triggers: ScrollTrigger[] = [];
 
     cards.forEach((card, index) => {
@@ -35,12 +35,12 @@ export const StickyCardStack: React.FC<StickyCardStackProps> = ({
         trigger: nextCard,
         start: "top 90%",
         end: "top 30%",
-        scrub: 1.2, // numeric scrub = smooth lag, not instant
+        scrub: isMobile ? true : 1.2,
         onUpdate: (self) => {
           const progress = self.progress;
           gsap.set(card, {
-            scale: gsap.utils.interpolate(1, 0.94, progress),
-            opacity: gsap.utils.interpolate(1, 0.55, progress),
+            scale: gsap.utils.interpolate(1, isMobile ? 0.96 : 0.94, progress),
+            opacity: gsap.utils.interpolate(1, isMobile ? 0.7 : 0.55, progress),
           });
         },
       });
