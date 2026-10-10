@@ -1,9 +1,12 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   // Static export — generates a self-contained `out/` directory that GitHub
   // Pages (or any CDN) can serve without a Node.js server.
   output: "export",
+  ...(basePath ? { basePath } : {}),
 
   // Trailing slash ensures every route is written as index.html inside its
   // own folder, so direct navigation and page refreshes work on GitHub Pages
